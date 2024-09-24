@@ -1,10 +1,14 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { connectDB } from './config/db.js'
+import router from './routes/routes.js'
+
 const app = express() 
 
 dotenv.config()
- 
+
+ app.use(express.json())
+ app.use("/api/products",router)
 
 app.get("/hello",(req,res)=>{
     res.send("Hola :D")

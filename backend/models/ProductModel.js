@@ -30,4 +30,4 @@ const productSchema = new mongoose.Schema({
 //va a llevar 2 argunmentos (coleccion y schema) y luego lo exportamos, 
 //se crear el modelo el controlador y las rutas para acceder y vistas con el frontend...
 
-const ProductModel = mongoose.model("Product",productSchema)
+const ProductModel = mongoose.model("Product",productSchema) // creara products como coleccion
