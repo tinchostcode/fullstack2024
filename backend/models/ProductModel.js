@@ -1,12 +1,13 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose  from "mongoose";
 
 
 //creamos un schema con los campos que vamos a utilizar. nombre,tipo,validaciones
 
-const productSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema(
+   {
 
-     descripcion:{
-        type:string,
+     description:{
+        type: String,
         required:[true,"complete el campo"]
      },
      stock:{
@@ -14,7 +15,7 @@ const productSchema = new mongoose.Schema({
         required:[true,"complete el campo"]
      },
      price:{
-        type:number,
+        type:Number,
         required:[true,"complete el campo"]
      },
     },
@@ -30,4 +31,4 @@ const productSchema = new mongoose.Schema({
 //va a llevar 2 argunmentos (coleccion y schema) y luego lo exportamos, 
 //se crear el modelo el controlador y las rutas para acceder y vistas con el frontend...
 
-const ProductModel = mongoose.model("Product",productSchema) // creara products como coleccion
+export const ProductModel = mongoose.model("Product",productSchema) // creara products como coleccion
